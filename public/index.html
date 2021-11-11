@@ -9,48 +9,118 @@ displays the results of one form entry and then prints the Meraki provided param
 
 Sample URL received from Meraki to this page.
 http://localhost:5000/?base_grant_url=https%3A%2F%2Fn143.network-auth.com%2Fsplash%2Fgrant&user_continue_url=http%3A%2F%2Fspeedof.me%2F&node_id=149624922840090&node_mac=88:15:44:60:1c:1a&gateway_id=149624922840090&client_ip=10.255.60.208&client_mac=f4:5c:89:9b:17:67
-
-
-This is example was written by:
-Cory Guynn
-www.InternetOfLEGO.com
-2016
-
 LICENSE: MIT
-"Have Fun!, use and abuse"
+
 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-    </head>
-    <div class="container">  
-      
-      <form id="loginForm" action="#">
-        <center><a href="http://developers.meraki.com"><img src="./img/meraki-logo.png" width="50%"/></a></center>
-        <br>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <div class="container">
+    <form id="loginForm" action="#">
+      <center>
+        <a href="https://boomersparks.com"
+          ><img src="./img/boomers-logo.png" width="50%"
+        /></a>
+      </center>
+      <br />
+      <fieldset>
+        <input
+          id="fname"
+          placeholder="First Name"
+          type="text"
+          tabindex="1"
+          required
+          autofocus
+        />
+      </fieldset>
+      <fieldset>
+        <input
+          id="lname"
+          placeholder="Last Name"
+          type="text"
+          tabindex="2"
+          required
+        />
         <fieldset>
-          <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+          <input
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            type="email"
+            tabindex="3"
+            required
+          />
         </fieldset>
         <fieldset>
-          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+          <label for="birthdate"> Birthdate </label>
+          <input
+            id="birthdate"
+            hovertext="Your Birthday"
+            type="date"
+            tabindex="4"
+            required
+          />
         </fieldset>
-        <fieldset>
-          <input id="company" placeholder="Your Company (optional)" type="text" tabindex="3">
-        </fieldset>
-        <fieldset>
-          <button type="submit" >Log in to WiFi</button>
-        </fieldset>
-        <p class="copyright">Sample by <a href="http://www.InternetOfLEGO.com" target="_blank" title="Internet of LEGO">Internet of LEGO</a></p>
-      </form>
-    </div>
-    <hr>
-    <h4>Debugging Stats</h4>
-    <p><label>Base Grant URL: </label><label id="baseGrantURL"></label></p>
-    <p><label>User Continue URL: </label><label id="userContinueURL"></label></p>
-    <p><label>Client IP: </label><label id="clientIP"></label></p>
-    <p><label>Client MAC: </label><label id="clientMAC"></label></p>
-    <p><label>Access Point MAC: </label><label id="nodeMAC"></label></p>
-        
-    <script src="./js/meraki.js"></script>
-</html>
+      </fieldset>
+      <fieldset>
+        <input id="signup" name="Signup" type="radio" tabindex="5" />
+        <label for="signup"> Sign up for promos and discounts </label>
+      </fieldset>
+      <fieldset>
+        <button type="submit">Log in to WiFi</button>
+      </fieldset>
+      <p class="copyright">
+        <center>
+          Terms of Use - By accessing the wireless network, you acknowledge that
+          you’re of legal age, you have read and understood and agree to be
+          bound by this agreement. The wireless network service is provided by
+          Boomers Parks and is completely at their discretion. Your access to
+          the network may be blocked, suspended, or terminated at any time for
+          any reason. You agree not to use the wireless network for any purpose
+          that is unlawful and take full responsibility of your acts. The
+          wireless network is provided “as is” without warranties of any kind,
+          either expressed or implied. <br />
+          WiFi Provided by
+          <a
+            href="https://www.boomersparks.com"
+            target="_blank"
+            title="Boomers Parks"
+            >Boomers Parks</a
+          >
+        </center>
+      </p>
+    </form>
+  </div>
+  <hr />
+  <h4>Debugging Stats</h4>
+  <p><label>Base Grant URL: </label><label id="baseGrantURL"></label></p>
+  <p><label>User Continue URL: </label><label id="userContinueURL"></label></p>
+  <p><label>Client IP: </label><label id="clientIP"></label></p>
+  <p><label>Client MAC: </label><label id="clientMAC"></label></p>
+  <p><label>Access Point MAC: </label><label id="nodeMAC"></label></p>
+
+  <script src="./js/meraki.js"></script>
+
+  <!-- Comment out Neverbounce Integration for testing
+
+  <script type="text/javascript">
+    // settings info here - https://developers.neverbounce.com/docs/widget-getting-started
+    _NBSettings = {
+      apiKey: "public_5036f2028b6c720fb39baa4b7e506b72",
+      displayPoweredBy: false,
+      acceptedMessage: "Valid email",
+      acceptedStatusCodes: [0, 3, 4], //valid(0), catchall(3) and unknown(4)
+      blockThrottledAttempts: false,
+      inputLatency: 600,
+      rejectedMessage: "Invalid email",
+      softRejectMessage: "Enter an email"
+    };
+  </script>
+  <script
+    type="text/javascript"
+    src="https://cdn.neverbounce.com/widget/dist/NeverBounce.js"
+  ></script>
+
+--></html>
